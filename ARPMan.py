@@ -1,4 +1,5 @@
 import platform
+import threading
 from UIout import UIout
 from Attack import Disconnect
 from Route import disable_ip_routing_linux, disable_ip_routing_windows, enable_ip_routing_linux, enable_ip_routing_windows 
@@ -9,8 +10,8 @@ def DisconnectTarget():
     target_mac = input("请输入目标MAC:")
     gateway_ip = input("请输入网关IP:")
     gateway_mac = input("请输入网关MAC:")
-    fake_mac = input("请输入伪造的MAC:")
-    timebreak = 0
+    fake_mac = "00-00-00-00-00-00"
+    timebreak = 1
     Disconnect(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak)
 
 def OpenRoute():
@@ -28,7 +29,14 @@ def CloseRoute():
         disable_ip_routing_linux()
 
 def CapturePacket():
-    print("3")
+    print("捕获数据开启前请开启路由转发！")   
+    target_ip = input("请输入目标IP:")
+    target_mac = input("请输入目标MAC:")
+    gateway_ip = input("请输入网关IP:")
+    gateway_mac = input("请输入网关MAC:")
+    fake_mac = input("请输入中间人MAC:")
+    timebreak = 1
+    Disconnect(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak)
 
 
 
